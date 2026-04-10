@@ -76,21 +76,21 @@ export default function ContactPage() {
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             <div>
               <label style={labelStyle}>Name</label>
-              <input type="text" placeholder="IDENTITY" value={form.name} onChange={e => setForm(p => ({ ...p, name: e.target.value }))} required style={inputStyle}
+              <input type="text" placeholder="IDENTITY" maxLength={100} value={form.name} onChange={e => setForm(p => ({ ...p, name: e.target.value }))} required style={inputStyle}
                 onFocus={e => e.target.style.borderBottomColor = 'rgba(167,165,255,0.6)'}
                 onBlur={e => e.target.style.borderBottomColor = 'rgba(255,255,255,0.15)'}
               />
             </div>
             <div>
               <label style={labelStyle}>Email</label>
-              <input type="email" placeholder="PROTOCOL@DOMAIN.COM" value={form.email} onChange={e => setForm(p => ({ ...p, email: e.target.value }))} required style={inputStyle}
+              <input type="email" placeholder="PROTOCOL@DOMAIN.COM" maxLength={100} value={form.email} onChange={e => setForm(p => ({ ...p, email: e.target.value }))} required style={inputStyle}
                 onFocus={e => e.target.style.borderBottomColor = 'rgba(167,165,255,0.6)'}
                 onBlur={e => e.target.style.borderBottomColor = 'rgba(255,255,255,0.15)'}
               />
             </div>
             <div>
               <label style={labelStyle}>Message</label>
-              <textarea placeholder="SHARE WHAT IS ON YOUR MIND..." value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} rows={5} required
+              <textarea placeholder="SHARE WHAT IS ON YOUR MIND..." maxLength={500} value={form.message} onChange={e => setForm(p => ({ ...p, message: e.target.value }))} rows={5} required
                 style={{ ...inputStyle, resize: 'none' }}
                 onFocus={e => e.target.style.borderBottomColor = 'rgba(167,165,255,0.6)'}
                 onBlur={e => e.target.style.borderBottomColor = 'rgba(255,255,255,0.15)'}
