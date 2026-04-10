@@ -17,7 +17,7 @@ export default function LandingPage() {
 
       {/* ── HERO ─────────────────────────────────────────── */}
       <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=1600&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.35 }} />
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=1600&auto=format&fit=crop&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.35 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #0E0E0E 45%, rgba(14,14,14,0.4) 100%)' }} />
         <div style={{ position: 'relative', zIndex: 10, maxWidth: '80rem', margin: '0 auto', padding: '0 1.5rem', width: '100%', paddingTop: '4rem' }}>
           <h1 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, color: '#fff', lineHeight: 0.92, letterSpacing: '-0.02em', fontSize: 'clamp(5rem, 13vw, 10rem)' }}>
@@ -43,7 +43,7 @@ export default function LandingPage() {
           <div style={{ position: 'relative', minHeight: '340px', overflow: 'hidden', cursor: 'pointer' }}
             onMouseEnter={e => { const d = e.currentTarget.querySelector('[data-bg]'); if(d){ d.style.opacity='0.9'; d.style.transform='scale(1.05)' }}}
             onMouseLeave={e => { const d = e.currentTarget.querySelector('[data-bg]'); if(d){ d.style.opacity='0.7'; d.style.transform='scale(1)' }}}>
-            <div data-bg style={{ position: 'absolute', inset: 0, backgroundImage: "url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.7, transition: 'opacity 0.5s ease, transform 0.5s ease' }} />
+            <div data-bg style={{ position: 'absolute', inset: 0, backgroundImage: "url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.7, transition: 'opacity 0.5s ease, transform 0.5s ease' }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.85) 40%, transparent)' }} />
             <div style={{ position: 'absolute', bottom: 0, left: 0, padding: '2rem' }}>
               <h3 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, color: '#fff', fontSize: '1.5rem', marginBottom: '0.5rem' }}>Hackathons</h3>
@@ -81,7 +81,7 @@ export default function LandingPage() {
           <div style={{ position: 'relative', minHeight: '340px', overflow: 'hidden', cursor: 'pointer' }}
             onMouseEnter={e => { const d = e.currentTarget.querySelector('[data-bg]'); if(d){ d.style.opacity='0.9'; d.style.transform='scale(1.05)' }}}
             onMouseLeave={e => { const d = e.currentTarget.querySelector('[data-bg]'); if(d){ d.style.opacity='0.7'; d.style.transform='scale(1)' }}}>
-            <div data-bg style={{ position: 'absolute', inset: 0, backgroundImage: "url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.7, transition: 'opacity 0.5s ease, transform 0.5s ease' }} />
+            <div data-bg style={{ position: 'absolute', inset: 0, backgroundImage: "url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=80')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.7, transition: 'opacity 0.5s ease, transform 0.5s ease' }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.85) 40%, transparent)' }} />
             <div style={{ position: 'absolute', bottom: 0, left: 0, padding: '2rem' }}>
               <h3 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, color: '#fff', fontSize: '1.5rem', marginBottom: '0.5rem' }}>Workshops</h3>
@@ -100,7 +100,7 @@ export default function LandingPage() {
           onMouseEnter={e => { e.currentTarget.style.borderColor='rgba(167,165,255,0.3)'; e.currentTarget.style.backgroundColor='rgba(255,255,255,0.02)' }}
           onMouseLeave={e => { e.currentTarget.style.borderColor='rgba(255,255,255,0.1)'; e.currentTarget.style.backgroundColor='transparent' }}>
           <div style={{ width: '160px', height: '120px', flexShrink: 0, overflow: 'hidden' }}>
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&q=80" alt="Hack & Ship" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(100%)', transition: 'filter 0.5s ease' }} />
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&auto=format&fit=crop&q=80" alt="Hack & Ship" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(100%)', transition: 'filter 0.5s ease' }} />
           </div>
           <div style={{ flex: 1 }}>
             <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#FF7439', marginBottom: '0.5rem' }}>APR 17-19, 2026</p>
@@ -129,7 +129,7 @@ export default function LandingPage() {
             </ul>
           </div>
           <div style={{ overflow: 'hidden' }}>
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Why Devvit" loading="lazy"
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80&auto=format&fit=crop" alt="Why Devvit" loading="lazy"
               style={{ width: '100%', height: '450px', objectFit: 'cover', filter: 'grayscale(100%)', transition: 'transform 0.6s ease' }}
               onMouseEnter={e => e.target.style.transform='scale(1.02)'}
               onMouseLeave={e => e.target.style.transform='scale(1)'}
