@@ -1,152 +1,110 @@
-import React from 'react'
-// KAN-6 | Shared Component: Navbar
-// Desktop nav + mobile hamburger menu
-
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-const navLinks = [
+const links = [
   { label: 'About',   to: '/' },
   { label: 'Events',  to: '/events' },
   { label: 'Contact', to: '/contact' },
 ]
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [scrolled, setScrolled]  = useState(false)
-  const location = useLocation()
+  const [open, setOpen]         = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const { pathname }            = useLocation()
 
-  // Add background blur on scroll
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
+    const fn = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', fn)
+    return () => window.removeEventListener('scroll', fn)
   }, [])
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMenuOpen(false)
-  }, [location])
+  useEffect(() => { setOpen(false) }, [pathname])
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-devvit-bg/90 backdrop-blur-md border-b border-white/10' : 'bg-transparent'
-      }`}
-    >
-      <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <header style={{
+      position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
+      transition: 'all 0.3s',
+      backgroundColor: scrolled ? 'rgba(14,14,14,0.95)' : 'transparent',
+      backdropFilter: scrolled ? 'blur(12px)' : 'none',
+      borderBottom: scrolled ? '1px solid rgba(255,255,255,0.08)' : 'none',
+    }}>
+      <nav style={{ maxWidth: '80rem', margin: '0 auto', padding: '0 1.5rem', height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem' }}>
 
         {/* Logo */}
-        <Link
-          to="/"
-          className="font-lexend font-black text-devvit-white text-lg tracking-tight hover:text-devvit-purple transition-colors duration-200"
-        >
-          v/v
-        </Link>
+        <Link to="/" style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, color: '#fff', fontSize: '1.5rem', textDecoration: 'none', letterSpacing: '-0.02em', flexShrink: 0, transition: 'color 0.2s' }}
+          onMouseEnter={e => e.target.style.color = '#A7A5FF'}
+          onMouseLeave={e => e.target.style.color = '#fff'}
+        >v/v</Link>
 
-        {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => {
-            const isActive = location.pathname === link.to
-            return (
-              <li key={link.label}>
-                <Link
-                  to={link.to}
-                  className={`font-grotesk text-sm font-bold uppercase tracking-widest transition-colors duration-200 ${
-                    isActive
-                      ? 'text-devvit-orange'
-                      : 'text-white/70 hover:text-devvit-white'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            )
-          })}
+        {/* Desktop links */}
+        <ul style={{ display: 'flex', alignItems: 'center', gap: '2.5rem', listStyle: 'none', flex: 1, justifyContent: 'center' }}
+          className="hidden-mobile">
+          {links.map(l => (
+            <li key={l.label}>
+              <Link to={l.to} style={{
+                fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.8rem', fontWeight: 700,
+                textTransform: 'uppercase', letterSpacing: '0.12em', textDecoration: 'none',
+                color: pathname === l.to ? '#FF7439' : 'rgba(255,255,255,0.65)',
+                transition: 'color 0.2s',
+              }}
+                onMouseEnter={e => { if (pathname !== l.to) e.target.style.color = '#fff' }}
+                onMouseLeave={e => { if (pathname !== l.to) e.target.style.color = 'rgba(255,255,255,0.65)' }}
+              >{l.label}</Link>
+            </li>
+          ))}
         </ul>
 
-        {/* Desktop Right: Search + Join */}
-        <div className="hidden md:flex items-center gap-4">
-          <input
-            type="text"
-            placeholder="Search"
-            className="bg-white/5 border border-white/10 text-white/70 placeholder-white/30 font-inter text-sm px-4 py-2 w-36 focus:outline-none focus:border-devvit-purple/50 transition-colors duration-200"
+        {/* Desktop right */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0 }} className="hidden-mobile">
+          <input type="text" placeholder="SEARCH"
+            style={{ backgroundColor: 'transparent', border: '1px solid rgba(255,255,255,0.18)', color: 'rgba(255,255,255,0.55)', fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.12em', padding: '0.5rem 1rem', width: '7rem', outline: 'none' }}
           />
-          <Link
-            to="/contact"
-            className="font-grotesk font-bold text-sm uppercase tracking-widest bg-devvit-purple text-devvit-bg px-5 py-2 hover:bg-opacity-90 transition-all duration-200"
-          >
-            Join
-          </Link>
+          <Link to="/contact" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.12em', backgroundColor: '#A7A5FF', color: '#0E0E0E', padding: '0.5rem 1.5rem', textDecoration: 'none', transition: 'background-color 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#9896f0'}
+            onMouseLeave={e => e.currentTarget.style.backgroundColor = '#A7A5FF'}
+          >Join</Link>
         </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 group"
-          onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block h-[2px] bg-white transition-all duration-300 ${
-              menuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'
-            }`}
-          />
-          <span
-            className={`block h-[2px] bg-white transition-all duration-300 ${
-              menuOpen ? 'opacity-0 w-0' : 'w-4'
-            }`}
-          />
-          <span
-            className={`block h-[2px] bg-white transition-all duration-300 ${
-              menuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-6'
-            }`}
-          />
+        {/* Hamburger - mobile only */}
+        <button onClick={() => setOpen(p => !p)} style={{ display: 'none', flexDirection: 'column', gap: '5px', width: '32px', height: '32px', justifyContent: 'center', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+          className="show-mobile" aria-label="menu">
+          <span style={{ display: 'block', width: '24px', height: '2px', backgroundColor: '#fff', transition: 'all 0.3s', transform: open ? 'rotate(45deg) translate(0, 7px)' : 'none' }} />
+          <span style={{ display: 'block', width: '16px', height: '2px', backgroundColor: '#fff', transition: 'all 0.3s', opacity: open ? 0 : 1 }} />
+          <span style={{ display: 'block', width: '24px', height: '2px', backgroundColor: '#fff', transition: 'all 0.3s', transform: open ? 'rotate(-45deg) translate(0, -7px)' : 'none' }} />
         </button>
       </nav>
 
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 bg-devvit-bg/95 backdrop-blur-md border-b border-white/10 ${
-          menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <ul className="flex flex-col px-6 py-6 gap-6">
-          {navLinks.map((link) => {
-            const isActive = location.pathname === link.to
-            return (
-              <li key={link.label}>
-                <Link
-                  to={link.to}
-                  className={`font-grotesk text-sm font-bold uppercase tracking-widest transition-colors duration-200 ${
-                    isActive ? 'text-devvit-orange' : 'text-white/70'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            )
-          })}
-
-          {/* Mobile Search */}
+      {/* Mobile menu */}
+      <div style={{ overflow: 'hidden', maxHeight: open ? '400px' : 0, transition: 'max-height 0.3s', backgroundColor: 'rgba(14,14,14,0.98)', borderBottom: open ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
+        <ul style={{ display: 'flex', flexDirection: 'column', padding: '1.5rem', gap: '1.5rem', listStyle: 'none' }}>
+          {links.map(l => (
+            <li key={l.label}>
+              <Link to={l.to} style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', textDecoration: 'none', color: pathname === l.to ? '#FF7439' : 'rgba(255,255,255,0.65)' }}>
+                {l.label}
+              </Link>
+            </li>
+          ))}
           <li>
-            <input
-              type="text"
-              placeholder="Search"
-              className="w-full bg-white/5 border border-white/10 text-white/70 placeholder-white/30 font-inter text-sm px-4 py-2 focus:outline-none focus:border-devvit-purple/50 transition-colors duration-200"
-            />
+            <input type="text" placeholder="SEARCH" style={{ width: '100%', backgroundColor: 'transparent', border: '1px solid rgba(255,255,255,0.18)', color: '#fff', fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.12em', padding: '0.5rem 1rem', outline: 'none' }} />
           </li>
-
-          {/* Mobile Join */}
           <li>
-            <Link
-              to="/contact"
-              className="block text-center font-grotesk font-bold text-sm uppercase tracking-widest bg-devvit-purple text-devvit-bg px-5 py-3 hover:bg-opacity-90 transition-all duration-200"
-            >
+            <Link to="/contact" style={{ display: 'block', textAlign: 'center', fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.12em', backgroundColor: '#A7A5FF', color: '#0E0E0E', padding: '0.75rem', textDecoration: 'none' }}>
               Join
             </Link>
           </li>
         </ul>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .hidden-mobile { display: none !important; }
+          .show-mobile   { display: flex !important; }
+        }
+        @media (min-width: 769px) {
+          .hidden-mobile { display: flex !important; }
+          .show-mobile   { display: none !important; }
+        }
+      `}</style>
     </header>
   )
 }

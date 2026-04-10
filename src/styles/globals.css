@@ -2,38 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Devvit Design Tokens ────────────────────────────────── */
 :root {
-  --color-bg:      #0E0E0E;
-  --color-purple:  #A7A5FF;
-  --color-orange:  #FF7439;
-  --color-white:   #FFFFFF;
-
-  --font-display: 'Lexend', sans-serif;
-  --font-body:    'Inter', sans-serif;
-  --font-label:   'Space Grotesk', sans-serif;
+  --bg:     #0E0E0E;
+  --purple: #A7A5FF;
+  --orange: #FF7439;
+  --white:  #FFFFFF;
 }
 
-/* ─── Base Reset ──────────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-white);
-  font-family: var(--font-body);
+  background-color: #0E0E0E;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── Typography Utilities ────────────────────────────────── */
-.font-display { font-family: var(--font-display); }
-.font-body    { font-family: var(--font-body); }
-.font-label   { font-family: var(--font-label); }
+/* Force font families */
+.font-lexend  { font-family: 'Lexend', sans-serif !important; }
+.font-inter   { font-family: 'Inter', sans-serif !important; }
+.font-grotesk { font-family: 'Space Grotesk', sans-serif !important; }
