@@ -10,7 +10,7 @@ const upcoming = [
     title: 'HACK & SHIP',
     desc: 'A 36-hour hackathon to not just build demo projects, but to build those rough ideas into a real world project, through guidance from experienced mentors and community development.',
     tags: ['Hackathon', 'In-Person'],
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&q=80',
+    image: '/images/hackathon.jpg',
   },
 ]
 
