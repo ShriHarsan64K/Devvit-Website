@@ -9,7 +9,7 @@ const upcoming = [
     date: 'APR 17-19, 2026',
     title: 'HACK & SHIP',
     desc: 'A 36-hour hackathon to not just build demo projects, but to build those rough ideas into a real world project, through guidance from experienced mentors and community development.',
-    tags: ['Hackathon', 'In-Person'],
+    tags: ['Hackathon', 'Virtual'],
     image: '/images/hackathon.jpg',
   },
 ]

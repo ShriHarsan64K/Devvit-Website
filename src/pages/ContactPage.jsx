@@ -4,12 +4,13 @@ import Footer from '../components/shared/Footer'
 import Button from '../components/shared/Button'
 
 const team = [
-  { name: 'N. Raghav',         role: 'Co-founder and Tech Lead',    quote: 'I like to shape what is yet uncertain into something that works.' },
-  { name: 'Shreya Kailash',    role: 'Co-founder and Design Lead',  quote: "It's a pleasure owning the process of User Experience with this vibrant community." },
-  { name: 'Shradha Chassatia', role: 'Product Manager',             quote: 'I like working with diverse teams towards the same goal.' },
-  { name: 'Sparsh Chandra',    role: 'Community and Outreach Lead', quote: 'I like building things, making them work, and helping them grow.' },
-  { name: 'Piyush',            role: 'Design Lead',                 quote: "I'm grateful for the opportunity to have designed the visual identity of Devvit." },
-  { name: 'Shristi Singh',     role: 'Content and Media Lead',      quote: 'I like turning ideas into stories people want to be part of.' },
+  { name: 'N. Raghav',         role: 'Co-founder and Tech Lead',              quote: 'I like to shape what is yet uncertain into something that works.' },
+  { name: 'Shreya Kailash',    role: 'Co-founder and Design Lead',            quote: "It's a pleasure owning the process of User Experience with this vibrant community." },
+  { name: 'Shradha Chassatia', role: 'Product Manager',                       quote: 'I like working with diverse teams towards the same goal.' },
+  { name: 'Sparsh Chandra',    role: 'Community and Outreach Lead',           quote: 'I like building things, making them work, and helping them grow.' },
+  { name: 'Shri Harsan M',     role: 'Technical Lead & Community and Outreach', quote: 'Building systems that connect people and ideas together.' },
+  { name: 'Piyush',            role: 'Design Lead',                           quote: "I'm grateful for the opportunity to have designed the visual identity of Devvit." },
+  { name: 'Shristi Singh',     role: 'Content and Media Lead',                quote: 'I like turning ideas into stories people want to be part of.' },
 ]
 
 const socials = [
