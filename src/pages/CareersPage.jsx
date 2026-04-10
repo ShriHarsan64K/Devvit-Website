@@ -11,31 +11,32 @@ const roles = [
 
 export default function CareersPage() {
   return (
-    <div className="bg-[#0E0E0E] min-h-screen">
+    <div style={{ backgroundColor: '#0E0E0E', minHeight: '100vh' }}>
       <Navbar />
-
-      <section className="max-w-7xl mx-auto px-6 pt-36 pb-16">
-        <h1 className="font-lexend font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(3rem, 10vw, 7rem)' }}>
-          JOIN THE<br /><span className="text-[#A7A5FF]">TEAM</span>
+      <section style={{ maxWidth: '80rem', margin: '0 auto', padding: '9rem 1.5rem 5rem' }}>
+        <h1 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, color: '#fff', lineHeight: 0.92, letterSpacing: '-0.02em', fontSize: 'clamp(3rem, 10vw, 7rem)', marginBottom: '1.5rem' }}>
+          JOIN THE<br /><span style={{ color: '#A7A5FF' }}>TEAM</span>
         </h1>
-        <p className="font-inter text-white/50 text-lg max-w-xl mb-16">
+        <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.5)', fontSize: 'clamp(1rem, 2vw, 1.125rem)', maxWidth: '36rem', lineHeight: 1.7, marginBottom: '4rem' }}>
           We're looking for kinetic talent. People who build things, make them work, and help them grow.
         </p>
-
-        <div className="flex flex-col gap-4">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           {roles.map(role => (
-            <div key={role.title} className="border border-white/10 p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-[#A7A5FF]/40 transition-colors group">
+            <div key={role.title}
+              style={{ border: '1px solid rgba(255,255,255,0.1)', padding: 'clamp(1.5rem, 3vw, 2rem)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1.5rem', transition: 'border-color 0.3s, background-color 0.3s' }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor='rgba(167,165,255,0.4)'; e.currentTarget.style.backgroundColor='rgba(255,255,255,0.02)' }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor='rgba(255,255,255,0.1)'; e.currentTarget.style.backgroundColor='transparent' }}
+            >
               <div>
-                <span className="font-grotesk text-xs font-bold uppercase tracking-widest text-[#FF7439] mb-2 block">{role.type}</span>
-                <h3 className="font-lexend font-bold text-white text-xl mb-2 group-hover:text-[#A7A5FF] transition-colors">{role.title}</h3>
-                <p className="font-inter text-sm text-white/50">{role.desc}</p>
+                <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#FF7439', display: 'block', marginBottom: '0.5rem' }}>{role.type}</span>
+                <h3 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, color: '#fff', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', marginBottom: '0.5rem' }}>{role.title}</h3>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>{role.desc}</p>
               </div>
               <Button variant="secondary" size="md" to="/contact">Apply →</Button>
             </div>
           ))}
         </div>
       </section>
-
       <Footer />
     </div>
   )

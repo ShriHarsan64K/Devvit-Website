@@ -19,11 +19,11 @@ export default function LandingPage() {
       <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/hero-bg.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.35 }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #0E0E0E 45%, rgba(14,14,14,0.4) 100%)' }} />
-        <div style={{ position: 'relative', zIndex: 10, maxWidth: '80rem', margin: '0 auto', padding: '0 1.5rem', width: '100%', paddingTop: '4rem' }}>
-          <h1 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, color: '#fff', lineHeight: 0.92, letterSpacing: '-0.02em', fontSize: 'clamp(5rem, 13vw, 10rem)' }}>
+        <div style={{ position: 'relative', zIndex: 10, maxWidth: '80rem', margin: '0 auto', padding: '5rem 1.5rem 2rem', width: '100%' }}>
+          <h1 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, color: '#fff', lineHeight: 0.92, letterSpacing: '-0.02em', fontSize: 'clamp(3.5rem, 12vw, 10rem)' }}>
             BUILD.<br />HOST.<br /><span style={{ color: '#A7A5FF' }}>DEVVIT.</span>
           </h1>
-          <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.6)', fontSize: '1.125rem', marginTop: '2rem', marginBottom: '2.5rem', lineHeight: 1.7 }}>
+          <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.6)', fontSize: 'clamp(1rem, 2.5vw, 1.125rem)', marginTop: '2rem', marginBottom: '2.5rem', lineHeight: 1.7, maxWidth: '32rem' }}>
             A community of builders &amp; hackers.<br />Where progress matters more than certificates.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
@@ -35,57 +35,57 @@ export default function LandingPage() {
 
       {/* ── WHAT WE DO ─────────────────────────────────── */}
       <section style={{ maxWidth: '80rem', margin: '0 auto', padding: '5rem 1.5rem' }}>
-        <h2 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, color: '#fff', fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '3rem', letterSpacing: '-0.02em' }}>
+        <h2 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, color: '#fff', fontSize: 'clamp(2rem, 5vw, 4rem)', marginBottom: '3rem', letterSpacing: '-0.02em' }}>
           WHAT WE DO
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+        <div className="grid-2">
           {/* Hackathons */}
-          <div style={{ position: 'relative', minHeight: '340px', overflow: 'hidden', cursor: 'pointer' }}
+          <div style={{ position: 'relative', minHeight: '300px', overflow: 'hidden', cursor: 'pointer' }}
             onMouseEnter={e => { const d = e.currentTarget.querySelector('[data-bg]'); if(d){ d.style.opacity='0.9'; d.style.transform='scale(1.05)' }}}
             onMouseLeave={e => { const d = e.currentTarget.querySelector('[data-bg]'); if(d){ d.style.opacity='0.7'; d.style.transform='scale(1)' }}}>
-            <div data-bg style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/hackathon.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.7, transition: 'opacity 0.5s ease, transform 0.5s ease' }} />
+            <div data-bg style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/hackathon.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.7, transition: 'opacity 0.5s, transform 0.5s' }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.85) 40%, transparent)' }} />
-            <div style={{ position: 'absolute', bottom: 0, left: 0, padding: '2rem' }}>
-              <h3 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, color: '#fff', fontSize: '1.5rem', marginBottom: '0.5rem' }}>Hackathons</h3>
-              <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', lineHeight: 1.6, maxWidth: '280px' }}>Blitz-scale your ideas from concept to production in 36-hour cycles of pure engineering focus.</p>
+            <div style={{ position: 'absolute', bottom: 0, left: 0, padding: '1.5rem' }}>
+              <h3 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, color: '#fff', fontSize: 'clamp(1.25rem, 3vw, 1.5rem)', marginBottom: '0.5rem' }}>Hackathons</h3>
+              <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.7)', fontSize: 'clamp(0.8rem, 1.5vw, 0.875rem)', lineHeight: 1.6, maxWidth: '280px' }}>Blitz-scale your ideas from concept to production in 36-hour cycles of pure engineering focus.</p>
             </div>
           </div>
 
           {/* Projects */}
-          <div style={{ backgroundColor: '#A7A5FF', minHeight: '340px', padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'background-color 0.3s', cursor: 'pointer' }}
+          <div style={{ backgroundColor: '#A7A5FF', minHeight: '300px', padding: '1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'background-color 0.3s', cursor: 'pointer' }}
             onMouseEnter={e => e.currentTarget.style.backgroundColor='#9896f0'}
             onMouseLeave={e => e.currentTarget.style.backgroundColor='#A7A5FF'}>
-            <div style={{ width: '48px', height: '48px', border: '2px solid rgba(0,0,0,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <span style={{ fontFamily: 'monospace', color: '#0E0E0E', fontWeight: 700, fontSize: '1rem' }}>&gt;_</span>
+            <div style={{ width: '44px', height: '44px', border: '2px solid rgba(0,0,0,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span style={{ fontFamily: 'monospace', color: '#0E0E0E', fontWeight: 700, fontSize: '0.9rem' }}>&gt;_</span>
             </div>
             <div>
-              <h3 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, color: '#0E0E0E', fontSize: '1.5rem', marginBottom: '0.5rem' }}>Projects</h3>
-              <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(0,0,0,0.65)', fontSize: '0.875rem', lineHeight: 1.6 }}>Open-source primitives for the kinetic web. Built by the community, for the future.</p>
+              <h3 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, color: '#0E0E0E', fontSize: 'clamp(1.25rem, 3vw, 1.5rem)', marginBottom: '0.5rem' }}>Projects</h3>
+              <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(0,0,0,0.65)', fontSize: 'clamp(0.8rem, 1.5vw, 0.875rem)', lineHeight: 1.6 }}>Open-source primitives for the kinetic web. Built by the community, for the future.</p>
             </div>
           </div>
 
           {/* Community */}
-          <div style={{ backgroundColor: '#FF7439', minHeight: '340px', padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'background-color 0.3s', cursor: 'pointer' }}
+          <div style={{ backgroundColor: '#FF7439', minHeight: '300px', padding: '1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'background-color 0.3s', cursor: 'pointer' }}
             onMouseEnter={e => e.currentTarget.style.backgroundColor='#f06830'}
             onMouseLeave={e => e.currentTarget.style.backgroundColor='#FF7439'}>
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="rgba(0,0,0,0.3)">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="rgba(0,0,0,0.3)">
               <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
             </svg>
             <div>
-              <h3 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, color: '#0E0E0E', fontSize: '1.5rem', marginBottom: '0.5rem' }}>Community</h3>
-              <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(0,0,0,0.65)', fontSize: '0.875rem', lineHeight: 1.6 }}>Connect with like-minded developers, share knowledge, and grow together in a supportive environment of builders.</p>
+              <h3 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, color: '#0E0E0E', fontSize: 'clamp(1.25rem, 3vw, 1.5rem)', marginBottom: '0.5rem' }}>Community</h3>
+              <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(0,0,0,0.65)', fontSize: 'clamp(0.8rem, 1.5vw, 0.875rem)', lineHeight: 1.6 }}>Connect with like-minded developers, share knowledge, and grow together in a supportive environment of builders.</p>
             </div>
           </div>
 
           {/* Workshops */}
-          <div style={{ position: 'relative', minHeight: '340px', overflow: 'hidden', cursor: 'pointer' }}
+          <div style={{ position: 'relative', minHeight: '300px', overflow: 'hidden', cursor: 'pointer' }}
             onMouseEnter={e => { const d = e.currentTarget.querySelector('[data-bg]'); if(d){ d.style.opacity='0.9'; d.style.transform='scale(1.05)' }}}
             onMouseLeave={e => { const d = e.currentTarget.querySelector('[data-bg]'); if(d){ d.style.opacity='0.7'; d.style.transform='scale(1)' }}}>
-            <div data-bg style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/workshop.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.7, transition: 'opacity 0.5s ease, transform 0.5s ease' }} />
+            <div data-bg style={{ position: 'absolute', inset: 0, backgroundImage: "url('/images/workshop.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.7, transition: 'opacity 0.5s, transform 0.5s' }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.85) 40%, transparent)' }} />
-            <div style={{ position: 'absolute', bottom: 0, left: 0, padding: '2rem' }}>
-              <h3 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, color: '#fff', fontSize: '1.5rem', marginBottom: '0.5rem' }}>Workshops</h3>
-              <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', lineHeight: 1.6, maxWidth: '280px' }}>Get expert guidance on your software journey, to fuel up your preparation for future.</p>
+            <div style={{ position: 'absolute', bottom: 0, left: 0, padding: '1.5rem' }}>
+              <h3 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, color: '#fff', fontSize: 'clamp(1.25rem, 3vw, 1.5rem)', marginBottom: '0.5rem' }}>Workshops</h3>
+              <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.7)', fontSize: 'clamp(0.8rem, 1.5vw, 0.875rem)', lineHeight: 1.6, maxWidth: '280px' }}>Get expert guidance on your software journey, to fuel up your preparation for future.</p>
             </div>
           </div>
         </div>
@@ -93,55 +93,52 @@ export default function LandingPage() {
 
       {/* ── UPCOMING EVENTS ──────────────────────────────── */}
       <section style={{ maxWidth: '80rem', margin: '0 auto', padding: '0 1.5rem 5rem' }}>
-        <h2 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, color: '#fff', fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '0.5rem', letterSpacing: '-0.02em' }}>UPCOMING EVENTS</h2>
+        <h2 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, color: '#fff', fontSize: 'clamp(2rem, 5vw, 4rem)', marginBottom: '0.5rem', letterSpacing: '-0.02em' }}>UPCOMING EVENTS</h2>
         <div style={{ width: '5rem', height: '3px', backgroundColor: '#A7A5FF', marginBottom: '3rem' }} />
         <a href="https://luma.com/yq94wzmt" target="_blank" rel="noopener noreferrer"
-          style={{ textDecoration: 'none', display: 'flex', gap: '1.5rem', alignItems: 'center', border: '1px solid rgba(255,255,255,0.1)', padding: '1.5rem', transition: 'all 0.3s ease' }}
+          style={{ textDecoration: 'none', display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center', border: '1px solid rgba(255,255,255,0.1)', padding: '1.5rem', transition: 'all 0.3s' }}
           onMouseEnter={e => { e.currentTarget.style.borderColor='rgba(167,165,255,0.3)'; e.currentTarget.style.backgroundColor='rgba(255,255,255,0.02)' }}
           onMouseLeave={e => { e.currentTarget.style.borderColor='rgba(255,255,255,0.1)'; e.currentTarget.style.backgroundColor='transparent' }}>
-          <div style={{ width: '160px', height: '120px', flexShrink: 0, overflow: 'hidden' }}>
-            <img src="/images/hackathon.jpg" alt="Hack & Ship" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(100%)', transition: 'filter 0.5s ease' }} />
+          <div className="event-img" style={{ width: '160px', height: '120px', flexShrink: 0, overflow: 'hidden' }}>
+            <img src="/images/hackathon.jpg" alt="Hack & Ship" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(100%)', transition: 'filter 0.5s' }} />
           </div>
-          <div style={{ flex: 1 }}>
+          <div style={{ flex: 1, minWidth: '200px' }}>
             <p style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#FF7439', marginBottom: '0.5rem' }}>APR 17-19, 2026</p>
-            <h3 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, color: '#fff', fontSize: '1.5rem', marginBottom: '0.75rem' }}>HACK &amp; SHIP</h3>
-            <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem', lineHeight: 1.7, maxWidth: '600px' }}>A 36-hour hackathon to not just build demo projects, but to build those rough ideas into a real world project, through guidance from experienced mentors and community development.</p>
+            <h3 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, color: '#fff', fontSize: 'clamp(1.25rem, 3vw, 1.5rem)', marginBottom: '0.75rem' }}>HACK &amp; SHIP</h3>
+            <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem', lineHeight: 1.7 }}>A 36-hour hackathon to not just build demo projects, but to build those rough ideas into a real world project, through guidance from experienced mentors and community development.</p>
           </div>
-          <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.5rem', flexShrink: 0 }}>↗</span>
+          <span className="hide-mobile" style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.5rem', flexShrink: 0 }}>↗</span>
         </a>
       </section>
 
       {/* ── WHY DEVVIT ───────────────────────────────────── */}
       <section style={{ maxWidth: '80rem', margin: '0 auto', padding: '0 1.5rem 5rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+        <div className="grid-why">
           <div>
-            <h2 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, color: '#fff', fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '3rem', letterSpacing: '-0.02em' }}>WHY DEVVIT</h2>
+            <h2 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, color: '#fff', fontSize: 'clamp(2rem, 5vw, 4rem)', marginBottom: '3rem', letterSpacing: '-0.02em' }}>WHY DEVVIT</h2>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', listStyle: 'none' }}>
               {whyDevvit.map(item => (
                 <li key={item.num} style={{ display: 'flex', gap: '1.5rem' }}>
                   <span style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '0.875rem', fontWeight: 700, color: '#A7A5FF', flexShrink: 0, marginTop: '2px' }}>{item.num}</span>
                   <div>
-                    <h3 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, color: '#fff', fontSize: '1.125rem', marginBottom: '0.25rem' }}>{item.title}</h3>
+                    <h3 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 700, color: '#fff', fontSize: 'clamp(1rem, 2vw, 1.125rem)', marginBottom: '0.25rem' }}>{item.title}</h3>
                     <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem', lineHeight: 1.7 }}>{item.desc}</p>
                   </div>
                 </li>
               ))}
             </ul>
           </div>
-          <div style={{ overflow: 'hidden' }}>
-            <img src="/images/why-devvit.jpg&auto=format&fit=crop" alt="Why Devvit" loading="lazy"
-              style={{ width: '100%', height: '450px', objectFit: 'cover', filter: 'grayscale(100%)', transition: 'transform 0.6s ease' }}
-              onMouseEnter={e => e.target.style.transform='scale(1.02)'}
-              onMouseLeave={e => e.target.style.transform='scale(1)'}
-            />
-          </div>
+          <div style={{ width: '100%', minHeight: '350px', backgroundImage: "url('/images/why-devvit.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', filter: 'grayscale(100%)', transition: 'filter 0.5s, transform 0.5s' }}
+            onMouseEnter={e => { e.currentTarget.style.filter='grayscale(0%)'; e.currentTarget.style.transform='scale(1.02)' }}
+            onMouseLeave={e => { e.currentTarget.style.filter='grayscale(100%)'; e.currentTarget.style.transform='scale(1)' }}
+          />
         </div>
       </section>
 
       {/* ── JOIN CTA ─────────────────────────────────────── */}
       <section style={{ padding: '6rem 1.5rem', textAlign: 'center' }}>
-        <h2 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, color: '#fff', lineHeight: 0.92, letterSpacing: '-0.02em', fontSize: 'clamp(4rem, 11vw, 9rem)', marginBottom: '1.5rem' }}>JOIN DEVVIT</h2>
-        <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.4)', fontSize: '1.125rem', marginBottom: '3rem' }}>The monolith is waiting for your contribution. Step into the kinetic stream.</p>
+        <h2 style={{ fontFamily: 'Lexend, sans-serif', fontWeight: 900, color: '#fff', lineHeight: 0.92, letterSpacing: '-0.02em', fontSize: 'clamp(3rem, 11vw, 9rem)', marginBottom: '1.5rem' }}>JOIN DEVVIT</h2>
+        <p style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.4)', fontSize: 'clamp(1rem, 2vw, 1.125rem)', marginBottom: '3rem' }}>The monolith is waiting for your contribution. Step into the kinetic stream.</p>
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
           <Button variant="orange" size="lg" href="https://chat.whatsapp.com/IfGcfARdgSJE8KpSz3fraD">Join Community</Button>
           <Button variant="secondary" size="lg" href="https://luma.com/yq94wzmt">Register</Button>
