@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const protocol  = ['About', 'Events', 'Careers', 'Contact']
-const resources = ['Documentation', 'Open Source', 'Templates']
+const resources = ['Open Source']
 
 export default function Footer() {
   return (
